@@ -1,0 +1,5 @@
+ipykernel==7.1.0
+ucimlrepo==0.0.7
+opacus==1.5.3
+torch==2.2.2
+synthcity==0.2.12

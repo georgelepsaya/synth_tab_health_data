@@ -1,4 +1,8 @@
 /.venv
+/az_venv
 /.ipynb_checkpoints
 /workspace
 /__pycache__
+/environment
+/azureml-examples
+.env

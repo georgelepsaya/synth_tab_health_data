@@ -1,5 +1,19 @@
+import os
+import multiprocessing
+
+num_cores = multiprocessing.cpu_count()
+os.environ["OMP_NUM_THREADS"] = str(num_cores)
+os.environ["MKL_NUM_THREADS"] = str(num_cores)
+
+import torch
+torch.set_num_threads(num_cores)
+torch.set_num_interop_threads(num_cores)
+
+print(f"Using {num_cores} CPU cores")
+
 import pandas as pd
 import optuna
+import sys
 from synthcity.plugins.core.dataloader import GenericDataLoader
 from synthcity.plugins import Plugins
 from synthcity.benchmark import Benchmarks
@@ -15,7 +29,7 @@ def load_data(filepath):
     return loader.train(), loader.test()
 
 
-def run_experiment(model_name, filepath):
+def run_experiment(model_name, filepath, out_path):
     """Run optimization and evaluation of a model"""
 
     train_loader, test_loader = load_data(filepath)
@@ -53,4 +67,12 @@ def run_experiment(model_name, filepath):
         repeats=1,
     )
     Benchmarks.print(report)
+    report.to_csv(out_path, index=False)
+    print(f"Metrics report saved to {out_path}")
 
+
+if __name__ == "__main__":
+    model_name = sys.argv[1]
+    dataset_path = sys.argv[2]
+    output_path = sys.argv[3]
+    run_experiment(model_name, dataset_path, output_path)

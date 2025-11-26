@@ -10,7 +10,7 @@ data_asset = Data(
     name="heart_disease",
     version=version,
     description="Heart Disease Dataset from UCI ML Repository",
-    path="heart_disease.csv",
+    path="data/heart_disease.csv",
     type=AssetTypes.URI_FILE,
 )
 

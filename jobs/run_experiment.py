@@ -67,7 +67,7 @@ def run_experiment(model_name, filepath, out_path):
         repeats=1,
     )
     Benchmarks.print(report)
-    report.to_csv(out_path, index=False)
+    report["test"].to_csv(out_path, index=False)
     print(f"Metrics report saved to {out_path}")
 
 

@@ -1,6 +1,6 @@
 from azure.ai.ml.entities import Data
 from azure.ai.ml.constants import AssetTypes
-from azure_ml_client import get_ml_client
+from azureml.azure_ml_client import get_ml_client
 
 ml_client = get_ml_client()
 

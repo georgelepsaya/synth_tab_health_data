@@ -1,0 +1,11 @@
+{
+    "task_type": "binclass",
+    "n_classes": 2,
+    "train_size": 615,
+    "val_size": 205,
+    "test_size": 205,
+    "n_num_features": 5,
+    "n_cat_features": 8,
+    "name": "heart",
+    "id": "heart--id"
+}

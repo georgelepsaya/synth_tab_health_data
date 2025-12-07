@@ -1,5 +1,5 @@
 from azure.ai.ml.entities import AmlCompute
-from azure_ml_client import get_ml_client
+from azureml.azure_ml_client import get_ml_client
 
 ml_client = get_ml_client()
 

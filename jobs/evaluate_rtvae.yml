@@ -1,0 +1,21 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+code: experiments
+command: >
+  python run_experiment.py 
+  ${{inputs.model_name}} 
+  ${{inputs.dataset_path}} 
+  ${{outputs.metrics_report}}
+environment: synthtabhealthdata:4
+inputs:
+  model_name: rtvae
+  dataset_path:
+    type: uri_file
+    path: azureml:heart_disease:1
+outputs:
+  metrics_report:
+    type: uri_file
+    mode: rw_mount
+compute: cpu-cluster
+display_name: evaluate_rtvae
+experiment_name: evaluate_rtvae
+description: Train, tune and evaluate RTVAE

@@ -1,0 +1,12 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+code: ../experiments/tab-ddpm
+command: >
+environment: azureml:tabddpm:5
+inputs:
+
+outputs:
+
+compute: azureml:cpu-cluster
+display_name: tune_ddpm
+experiment_name: tune_ddpm
+description: Tune Tab-DDPM

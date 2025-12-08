@@ -1,16 +1,3 @@
-import os
-import multiprocessing
-
-num_cores = multiprocessing.cpu_count()
-os.environ["OMP_NUM_THREADS"] = str(num_cores)
-os.environ["MKL_NUM_THREADS"] = str(num_cores)
-
-import torch
-torch.set_num_threads(num_cores)
-torch.set_num_interop_threads(num_cores)
-
-print(f"Using {num_cores} CPU cores")
-
 import pandas as pd
 import optuna
 import sys
@@ -67,7 +54,7 @@ def run_experiment(model_name, filepath, out_path):
         repeats=1,
     )
     Benchmarks.print(report)
-    report["test"].to_csv(out_path, index=False)
+    report["test"].to_csv(out_path)
     print(f"Metrics report saved to {out_path}")
 
 

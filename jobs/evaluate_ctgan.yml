@@ -7,16 +7,16 @@ command: >
   ${{outputs.metrics_report}}
 environment: azureml:synthtabhealthdata:4
 inputs:
-  model_name: rtvae
+  model_name: ctgan
   dataset_path:
     type: uri_file
     path: azureml:heart_disease:1
 outputs:
   metrics_report:
     type: uri_file
-    path: azureml://datastores/workspaceblobstore/paths/metrics_evals/rtvae_eval.csv
-    name: rtvae_eval
+    path: azureml://datastores/workspaceblobstore/paths/metrics_evals/ctgan_eval.csv
+    name: ctgan_eval
 compute: azureml:cpu-cluster
-display_name: evaluate_rtvae
-experiment_name: evaluate_rtvae
-description: Train, tune and evaluate RTVAE
+display_name: evaluate_ctgan
+experiment_name: evaluate_ctgan
+description: Train, tune and evaluate CTGAN

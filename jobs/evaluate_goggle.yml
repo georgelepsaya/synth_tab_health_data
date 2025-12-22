@@ -1,0 +1,22 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+code: ../experiments/synthcity
+command: >
+  python run_experiment_synthcity.py
+  ${{inputs.model_name}}
+  ${{inputs.dataset_path}}
+  ${{outputs.metrics_report}}
+environment: azureml:synthtabhealthdata:4
+inputs:
+  model_name: goggle
+  dataset_path:
+    type: uri_file
+    path: azureml:heart_disease:1
+outputs:
+  metrics_report:
+    type: uri_file
+    path: azureml://datastores/workspaceblobstore/paths/metrics_evals/goggle_eval.csv
+    name: goggle_eval
+compute: azureml:cpu-cluster
+display_name: evaluate_goggle
+experiment_name: evaluate_goggle
+description: Train, tune and evaluate GOGGLE

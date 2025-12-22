@@ -1,5 +1,4 @@
 /.venv
-/az_venv
 /.ipynb_checkpoints
 /workspace
 __pycache__

@@ -5,9 +5,13 @@ command: >
   ${{inputs.model_name}}
   ${{inputs.dataset_path}}
   ${{outputs.metrics_report}}
-environment: azureml:synthtabhealthdata:4
+  ${{inputs.target_col}}
+  ${{inputs.n_trials}}
+environment: azureml:synthtabhealthdata@latest
 inputs:
   model_name: ddpm
+  target_col: target
+  n_trials: 50
   dataset_path:
     type: uri_file
     path: azureml:heart_disease:1
@@ -16,7 +20,7 @@ outputs:
     type: uri_file
     path: azureml://datastores/workspaceblobstore/paths/metrics_evals/ddpm_eval.csv
     name: ddpm_eval
-compute: azureml:cpu-cluster
+compute: azureml:gpu-cluster
 display_name: evaluate_ddpm
 experiment_name: evaluate_ddpm
 description: Train, tune and evaluate TabDDPM

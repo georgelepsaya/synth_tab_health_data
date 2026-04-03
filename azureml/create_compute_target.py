@@ -3,19 +3,23 @@ from azure_ml_client import get_ml_client
 
 ml_client = get_ml_client()
 
-cpu_compute_target = "cpu-cluster"
 
-try:
-    ml_client.compute.get(cpu_compute_target)
-    print("Compute already exists.")
-except Exception:
-    print("Creating a new CPU compute target...")
-    compute = AmlCompute(
-        name=cpu_compute_target,
-        size="Standard_D13_v2",
-        min_instances=0,
-        max_instances=2,
-    )
-    ml_client.compute.begin_create_or_update(compute).result()
+def ensure_compute(name, size, tier="dedicated"):
+    try:
+        ml_client.compute.get(name)
+        print(f"Compute '{name}' already exists.")
+    except Exception:
+        print(f"Creating compute '{name}' ({size}, {tier})...")
+        compute = AmlCompute(
+            name=name,
+            size=size,
+            min_instances=0,
+            max_instances=2,
+            tier=tier,
+        )
+        ml_client.compute.begin_create_or_update(compute).result()
+        print(f"Compute '{name}' created.")
 
-print("CPU compute ready.")
+
+ensure_compute("cpu-cluster", "Standard_D13_v2")
+ensure_compute("gpu-cluster", "Standard_NC12s_v3", tier="low_priority")

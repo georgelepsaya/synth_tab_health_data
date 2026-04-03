@@ -5,9 +5,13 @@ command: >
   ${{inputs.model_name}}
   ${{inputs.dataset_path}}
   ${{outputs.metrics_report}}
-environment: azureml:synthtabhealthdata:4
+  ${{inputs.target_col}}
+  ${{inputs.n_trials}}
+environment: azureml:synthtabhealthdata@latest
 inputs:
   model_name: bayesian_network
+  target_col: target
+  n_trials: 50
   dataset_path:
     type: uri_file
     path: azureml:heart_disease:1
@@ -16,7 +20,7 @@ outputs:
     type: uri_file
     path: azureml://datastores/workspaceblobstore/paths/metrics_evals/bayesian_network_eval.csv
     name: bayesian_network_eval
-compute: azureml:cpu-cluster
+compute: azureml:gpu-cluster
 display_name: evaluate_bayesian_network
 experiment_name: evaluate_bayesian_network
 description: Train, tune and evaluate Bayesian Network

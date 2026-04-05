@@ -1,0 +1,28 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+code: ../../experiments/synthcity
+command: >
+  python run_experiment_synthcity.py
+  ${{inputs.model_name}}
+  ${{inputs.dataset_path}}
+  ${{outputs.metrics_report}}
+  ${{inputs.target_col}}
+  ${{inputs.n_trials}}
+  "${{inputs.sep}}"
+environment: azureml:synthtabhealthdata@latest
+inputs:
+  model_name: adsgan
+  target_col: Cath
+  n_trials: 50
+  sep: ","
+  dataset_path:
+    type: uri_file
+    path: azureml:coronary_artery:1
+outputs:
+  metrics_report:
+    type: uri_file
+    path: azureml://datastores/workspaceblobstore/paths/metrics_evals/adsgan_eval_coronary_artery.csv
+    name: adsgan_eval_coronary_artery
+compute: azureml:gpu-cluster
+display_name: coronary_artery_adsgan
+experiment_name: evaluate_adsgan
+description: Train, tune and evaluate ADS-GAN on the Coronary Artery Disease dataset

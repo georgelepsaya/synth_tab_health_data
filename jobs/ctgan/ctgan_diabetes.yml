@@ -1,5 +1,5 @@
 $schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
-code: ../experiments/synthcity
+code: ../../experiments/synthcity
 command: >
   python run_experiment_synthcity.py
   ${{inputs.model_name}}
@@ -10,19 +10,19 @@ command: >
   "${{inputs.sep}}"
 environment: azureml:synthtabhealthdata@latest
 inputs:
-  model_name: adsgan
-  target_col: Diagnosis
+  model_name: ctgan
+  target_col: Outcome
   n_trials: 50
   sep: ","
   dataset_path:
     type: uri_file
-    path: azureml:alzheimers:1
+    path: azureml:diabetes:1
 outputs:
   metrics_report:
     type: uri_file
-    path: azureml://datastores/workspaceblobstore/paths/metrics_evals/adsgan_eval_alzheimers.csv
-    name: adsgan_eval_alzheimers
+    path: azureml://datastores/workspaceblobstore/paths/metrics_evals/ctgan_eval_diabetes.csv
+    name: ctgan_eval_diabetes
 compute: azureml:gpu-cluster
-display_name: alzheimers_adsgan
-experiment_name: evaluate_adsgan
-description: Train, tune and evaluate ADS-GAN on the Alzheimer's Disease dataset
+display_name: diabetes_ctgan
+experiment_name: evaluate_ctgan
+description: Train, tune and evaluate CTGAN on the Diabetes dataset

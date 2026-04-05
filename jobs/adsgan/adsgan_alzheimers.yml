@@ -1,5 +1,5 @@
 $schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
-code: ../experiments/synthcity
+code: ../../experiments/synthcity
 command: >
   python run_experiment_synthcity.py
   ${{inputs.model_name}}
@@ -11,18 +11,18 @@ command: >
 environment: azureml:synthtabhealthdata@latest
 inputs:
   model_name: adsgan
-  target_col: Cath
+  target_col: Diagnosis
   n_trials: 50
   sep: ","
   dataset_path:
     type: uri_file
-    path: azureml:coronary_artery:1
+    path: azureml:alzheimers:1
 outputs:
   metrics_report:
     type: uri_file
-    path: azureml://datastores/workspaceblobstore/paths/metrics_evals/adsgan_eval_coronary_artery.csv
-    name: adsgan_eval_coronary_artery
+    path: azureml://datastores/workspaceblobstore/paths/metrics_evals/adsgan_eval_alzheimers.csv
+    name: adsgan_eval_alzheimers
 compute: azureml:gpu-cluster
-display_name: coronary_artery_adsgan
+display_name: alzheimers_adsgan
 experiment_name: evaluate_adsgan
-description: Train, tune and evaluate ADS-GAN on the Coronary Artery Disease dataset
+description: Train, tune and evaluate ADS-GAN on the Alzheimer's Disease dataset

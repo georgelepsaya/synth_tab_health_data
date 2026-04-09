@@ -11,18 +11,18 @@ command: >
 environment: azureml:synthtabhealthdata@latest
 inputs:
   model_name: pategan
-  target_col: Diagnosis
+  target_col: cardio
   n_trials: 50
-  sep: ","
+  sep: ";"
   dataset_path:
     type: uri_file
-    path: azureml:alzheimers:1
+    path: azureml:cardio_train:1
 outputs:
   metrics_report:
     type: uri_file
-    path: azureml://datastores/workspaceblobstore/paths/metrics_evals/pategan_eval_alzheimers.csv
-    name: pategan_eval_alzheimers
+    path: azureml://datastores/workspaceblobstore/paths/metrics_evals/pategan_eval_cardio_train.csv
+    name: pategan_eval_cardio_train
 compute: azureml:gpu-cluster
-display_name: alzheimers_pategan
+display_name: cardio_train_pategan
 experiment_name: evaluate_pategan
-description: Train, tune and evaluate PATEGAN on the Alzheimer's Disease dataset
+description: Train, tune and evaluate PATEGAN on the Cardio Train dataset

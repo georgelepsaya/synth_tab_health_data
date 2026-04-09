@@ -10,19 +10,19 @@ command: >
   "${{inputs.sep}}"
 environment: azureml:synthtabhealthdata@latest
 inputs:
-  model_name: pategan
-  target_col: Cath
+  model_name: dpgan
+  target_col: Diagnosis
   n_trials: 50
   sep: ","
   dataset_path:
     type: uri_file
-    path: azureml:coronary_artery:1
+    path: azureml:breast_cancer:1
 outputs:
   metrics_report:
     type: uri_file
-    path: azureml://datastores/workspaceblobstore/paths/metrics_evals/pategan_eval_coronary_artery.csv
-    name: pategan_eval_coronary_artery
+    path: azureml://datastores/workspaceblobstore/paths/metrics_evals/dpgan_eval_breast_cancer.csv
+    name: dpgan_eval_breast_cancer
 compute: azureml:gpu-cluster
-display_name: coronary_artery_pategan
-experiment_name: evaluate_pategan
-description: Train, tune and evaluate PATEGAN on the Coronary Artery Disease dataset
+display_name: breast_cancer_dpgan
+experiment_name: evaluate_dpgan
+description: Train, tune and evaluate DP-GAN on the Breast Cancer dataset

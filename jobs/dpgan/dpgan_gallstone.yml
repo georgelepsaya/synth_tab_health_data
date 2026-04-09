@@ -10,19 +10,19 @@ command: >
   "${{inputs.sep}}"
 environment: azureml:synthtabhealthdata@latest
 inputs:
-  model_name: pategan
-  target_col: Outcome
+  model_name: dpgan
+  target_col: gallstone_status
   n_trials: 50
   sep: ","
   dataset_path:
     type: uri_file
-    path: azureml:diabetes:1
+    path: azureml:gallstone:2
 outputs:
   metrics_report:
     type: uri_file
-    path: azureml://datastores/workspaceblobstore/paths/metrics_evals/pategan_eval_diabetes.csv
-    name: pategan_eval_diabetes
+    path: azureml://datastores/workspaceblobstore/paths/metrics_evals/dpgan_eval_gallstone.csv
+    name: dpgan_eval_gallstone
 compute: azureml:gpu-cluster
-display_name: diabetes_pategan
-experiment_name: evaluate_pategan
-description: Train, tune and evaluate PATEGAN on the Diabetes dataset
+display_name: gallstone_dpgan
+experiment_name: evaluate_dpgan
+description: Train, tune and evaluate DP-GAN on the Gallstone dataset

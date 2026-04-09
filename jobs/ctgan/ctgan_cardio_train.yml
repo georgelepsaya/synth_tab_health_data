@@ -10,19 +10,19 @@ command: >
   "${{inputs.sep}}"
 environment: azureml:synthtabhealthdata@latest
 inputs:
-  model_name: pategan
-  target_col: Diagnosis
+  model_name: ctgan
+  target_col: cardio
   n_trials: 50
-  sep: ","
+  sep: ";"
   dataset_path:
     type: uri_file
-    path: azureml:breast_cancer:1
+    path: azureml:cardio_train:1
 outputs:
   metrics_report:
     type: uri_file
-    path: azureml://datastores/workspaceblobstore/paths/metrics_evals/pategan_eval_breast_cancer.csv
-    name: pategan_eval_breast_cancer
+    path: azureml://datastores/workspaceblobstore/paths/metrics_evals/ctgan_eval_cardio_train.csv
+    name: ctgan_eval_cardio_train
 compute: azureml:gpu-cluster
-display_name: breast_cancer_pategan
-experiment_name: evaluate_pategan
-description: Train, tune and evaluate PATEGAN on the Breast Cancer dataset
+display_name: cardio_train_ctgan
+experiment_name: evaluate_ctgan
+description: Train, tune and evaluate CTGAN on the Cardio Train dataset

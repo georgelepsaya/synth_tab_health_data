@@ -35,7 +35,7 @@ def load_data(filepath, target_column, sep=","):
     return loader.train(), loader.test()
 
 
-def run_experiment(model_name, filepath, target_col, out_path, n_trials, sep=","):
+def run_experiment(model_name, filepath, target_col, out_path, n_trials, sep=",", epsilon=1.0):
     log_device()
     train_loader, test_loader = load_data(filepath, target_col, sep=sep)
     print(f"Dataset: {filepath} ({len(train_loader) + len(test_loader)} rows)")
@@ -47,6 +47,8 @@ def run_experiment(model_name, filepath, target_col, out_path, n_trials, sep=","
         params = suggest_all(trial, hp_space)
         params["batch_size"] = BATCH_SIZE
         params["n_iter"] = 300
+        if model_name == "dpgan":
+            params["epsilon"] = epsilon
 
         try:
             model = Plugins().get(model_name, **params)
@@ -72,6 +74,8 @@ def run_experiment(model_name, filepath, target_col, out_path, n_trials, sep=","
     best_params = study.best_params
     best_params["batch_size"] = BATCH_SIZE
     best_params.pop("n_iter", None)  # remove tuning shortcut; use model default for final eval
+    if model_name == "dpgan":
+        best_params["epsilon"] = epsilon
 
     print("\n=== Best parameters ===")
     print(best_params)
@@ -104,5 +108,6 @@ if __name__ == "__main__":
     target_col = sys.argv[4] if len(sys.argv) > 4 else "target"
     n_trials = int(sys.argv[5]) if len(sys.argv) > 5 else DEFAULT_N_TRIALS
     sep = sys.argv[6] if len(sys.argv) > 6 else ","
+    epsilon = float(sys.argv[7]) if len(sys.argv) > 7 else 1.0
 
-    run_experiment(model_name, dataset_path, target_col, output_path, n_trials, sep=sep)
+    run_experiment(model_name, dataset_path, target_col, output_path, n_trials, sep=sep, epsilon=epsilon)

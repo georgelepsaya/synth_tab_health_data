@@ -1,0 +1,215 @@
+                                                        min       max  \
+sanity.data_mismatch.score                         0.000000  0.000000   
+sanity.common_rows_proportion.score                0.000000  0.000000   
+sanity.nearest_syn_neighbor_distance.mean          0.172594  0.172594   
+sanity.close_values_probability.score              0.727273  0.727273   
+sanity.distant_values_probability.score            0.012987  0.012987   
+stats.jensenshannon_dist.marginal                  0.070472  0.070472   
+stats.chi_squared_test.marginal                    0.134725  0.134725   
+stats.inv_kl_divergence.marginal                   0.231383  0.231383   
+stats.ks_test.marginal                             0.280664  0.280664   
+stats.max_mean_discrepancy.joint                   0.013269  0.013269   
+stats.wasserstein_dist.joint                       1.559023  1.559023   
+stats.prdc.precision                               0.000000  0.000000   
+stats.prdc.recall                                  0.000000  0.000000   
+stats.prdc.density                                 0.000000  0.000000   
+stats.prdc.coverage                                0.000000  0.000000   
+stats.alpha_precision.delta_precision_alpha_OC     0.340693  0.340693   
+stats.alpha_precision.delta_coverage_beta_OC       0.012987  0.012987   
+stats.alpha_precision.authenticity_OC              0.993506  0.993506   
+stats.alpha_precision.delta_precision_alpha_naive  0.000000  0.000000   
+stats.alpha_precision.delta_coverage_beta_naive    0.000000  0.000000   
+stats.alpha_precision.authenticity_naive           1.000000  1.000000   
+performance.linear_model.gt                        0.821528  0.821528   
+performance.linear_model.syn_id                    0.790625  0.790625   
+performance.linear_model.syn_ood                   0.900000  0.900000   
+performance.mlp.gt                                 0.441406  0.441406   
+performance.mlp.syn_id                             0.500000  0.500000   
+performance.mlp.syn_ood                            0.500000  0.500000   
+performance.xgb.gt                                 0.765799  0.765799   
+performance.xgb.syn_id                             0.505035  0.505035   
+performance.xgb.syn_ood                            0.500000  0.500000   
+performance.linear_model_augmentation.gt           0.821528  0.821528   
+performance.linear_model_augmentation.aug_ood      0.900000  0.900000   
+performance.mlp_augmentation.gt                    0.441406  0.441406   
+performance.mlp_augmentation.aug_ood               0.500000  0.500000   
+performance.xgb_augmentation.gt                    0.765799  0.765799   
+performance.xgb_augmentation.aug_ood               0.500000  0.500000   
+performance.feat_rank_distance.corr               -0.228370 -0.228370   
+performance.feat_rank_distance.pvalue              0.075970  0.075970   
+detection.detection_xgb.mean                       0.996774  0.996774   
+detection.detection_mlp.mean                       1.000000  1.000000   
+detection.detection_gmm.mean                       0.300347  0.300347   
+detection.detection_linear.mean                    1.000000  1.000000   
+privacy.delta-presence.score                       2.800000  2.800000   
+privacy.k-anonymization.gt                         1.000000  1.000000   
+privacy.k-anonymization.syn                        1.000000  1.000000   
+privacy.k-map.score                                5.000000  5.000000   
+privacy.distinct l-diversity.gt                    1.000000  1.000000   
+privacy.distinct l-diversity.syn                   1.000000  1.000000   
+privacy.identifiability_score.score                0.000000  0.000000   
+privacy.identifiability_score.score_OC             0.019481  0.019481   
+privacy.DomiasMIA_BNAF.accuracy                    0.173653  0.173653   
+privacy.DomiasMIA_BNAF.aucroc                      0.523116  0.523116   
+
+                                                       mean  stddev    median  \
+sanity.data_mismatch.score                         0.000000     0.0  0.000000   
+sanity.common_rows_proportion.score                0.000000     0.0  0.000000   
+sanity.nearest_syn_neighbor_distance.mean          0.172594     0.0  0.172594   
+sanity.close_values_probability.score              0.727273     0.0  0.727273   
+sanity.distant_values_probability.score            0.012987     0.0  0.012987   
+stats.jensenshannon_dist.marginal                  0.070472     0.0  0.070472   
+stats.chi_squared_test.marginal                    0.134725     0.0  0.134725   
+stats.inv_kl_divergence.marginal                   0.231383     0.0  0.231383   
+stats.ks_test.marginal                             0.280664     0.0  0.280664   
+stats.max_mean_discrepancy.joint                   0.013269     0.0  0.013269   
+stats.wasserstein_dist.joint                       1.559023     0.0  1.559023   
+stats.prdc.precision                               0.000000     0.0  0.000000   
+stats.prdc.recall                                  0.000000     0.0  0.000000   
+stats.prdc.density                                 0.000000     0.0  0.000000   
+stats.prdc.coverage                                0.000000     0.0  0.000000   
+stats.alpha_precision.delta_precision_alpha_OC     0.340693     0.0  0.340693   
+stats.alpha_precision.delta_coverage_beta_OC       0.012987     0.0  0.012987   
+stats.alpha_precision.authenticity_OC              0.993506     0.0  0.993506   
+stats.alpha_precision.delta_precision_alpha_naive  0.000000     0.0  0.000000   
+stats.alpha_precision.delta_coverage_beta_naive    0.000000     0.0  0.000000   
+stats.alpha_precision.authenticity_naive           1.000000     0.0  1.000000   
+performance.linear_model.gt                        0.821528     0.0  0.821528   
+performance.linear_model.syn_id                    0.790625     0.0  0.790625   
+performance.linear_model.syn_ood                   0.900000     0.0  0.900000   
+performance.mlp.gt                                 0.441406     0.0  0.441406   
+performance.mlp.syn_id                             0.500000     0.0  0.500000   
+performance.mlp.syn_ood                            0.500000     0.0  0.500000   
+performance.xgb.gt                                 0.765799     0.0  0.765799   
+performance.xgb.syn_id                             0.505035     0.0  0.505035   
+performance.xgb.syn_ood                            0.500000     0.0  0.500000   
+performance.linear_model_augmentation.gt           0.821528     0.0  0.821528   
+performance.linear_model_augmentation.aug_ood      0.900000     0.0  0.900000   
+performance.mlp_augmentation.gt                    0.441406     0.0  0.441406   
+performance.mlp_augmentation.aug_ood               0.500000     0.0  0.500000   
+performance.xgb_augmentation.gt                    0.765799     0.0  0.765799   
+performance.xgb_augmentation.aug_ood               0.500000     0.0  0.500000   
+performance.feat_rank_distance.corr                0.001000     0.0 -0.228370   
+performance.feat_rank_distance.pvalue              0.075970     0.0  0.075970   
+detection.detection_xgb.mean                       0.996774     0.0  0.996774   
+detection.detection_mlp.mean                       1.000000     0.0  1.000000   
+detection.detection_gmm.mean                       0.300347     0.0  0.300347   
+detection.detection_linear.mean                    1.000000     0.0  1.000000   
+privacy.delta-presence.score                       2.800000     0.0  2.800000   
+privacy.k-anonymization.gt                         1.000000     0.0  1.000000   
+privacy.k-anonymization.syn                        1.000000     0.0  1.000000   
+privacy.k-map.score                                5.000000     0.0  5.000000   
+privacy.distinct l-diversity.gt                    1.000000     0.0  1.000000   
+privacy.distinct l-diversity.syn                   1.000000     0.0  1.000000   
+privacy.identifiability_score.score                0.000000     0.0  0.000000   
+privacy.identifiability_score.score_OC             0.019481     0.0  0.019481   
+privacy.DomiasMIA_BNAF.accuracy                    0.173653     0.0  0.173653   
+privacy.DomiasMIA_BNAF.aucroc                      0.523116     0.0  0.523116   
+
+                                                   iqr rounds errors  \
+sanity.data_mismatch.score                         0.0      1      0   
+sanity.common_rows_proportion.score                0.0      1      0   
+sanity.nearest_syn_neighbor_distance.mean          0.0      1      0   
+sanity.close_values_probability.score              0.0      1      0   
+sanity.distant_values_probability.score            0.0      1      0   
+stats.jensenshannon_dist.marginal                  0.0      1      0   
+stats.chi_squared_test.marginal                    0.0      1      0   
+stats.inv_kl_divergence.marginal                   0.0      1      0   
+stats.ks_test.marginal                             0.0      1      0   
+stats.max_mean_discrepancy.joint                   0.0      1      0   
+stats.wasserstein_dist.joint                       0.0      1      0   
+stats.prdc.precision                               0.0      1      0   
+stats.prdc.recall                                  0.0      1      0   
+stats.prdc.density                                 0.0      1      0   
+stats.prdc.coverage                                0.0      1      0   
+stats.alpha_precision.delta_precision_alpha_OC     0.0      1      0   
+stats.alpha_precision.delta_coverage_beta_OC       0.0      1      0   
+stats.alpha_precision.authenticity_OC              0.0      1      0   
+stats.alpha_precision.delta_precision_alpha_naive  0.0      1      0   
+stats.alpha_precision.delta_coverage_beta_naive    0.0      1      0   
+stats.alpha_precision.authenticity_naive           0.0      1      0   
+performance.linear_model.gt                        0.0      1      0   
+performance.linear_model.syn_id                    0.0      1      0   
+performance.linear_model.syn_ood                   0.0      1      0   
+performance.mlp.gt                                 0.0      1      0   
+performance.mlp.syn_id                             0.0      1      0   
+performance.mlp.syn_ood                            0.0      1      0   
+performance.xgb.gt                                 0.0      1      0   
+performance.xgb.syn_id                             0.0      1      0   
+performance.xgb.syn_ood                            0.0      1      0   
+performance.linear_model_augmentation.gt           0.0      1      0   
+performance.linear_model_augmentation.aug_ood      0.0      1      0   
+performance.mlp_augmentation.gt                    0.0      1      0   
+performance.mlp_augmentation.aug_ood               0.0      1      0   
+performance.xgb_augmentation.gt                    0.0      1      0   
+performance.xgb_augmentation.aug_ood               0.0      1      0   
+performance.feat_rank_distance.corr                0.0      1      0   
+performance.feat_rank_distance.pvalue              0.0      1      0   
+detection.detection_xgb.mean                       0.0      1      0   
+detection.detection_mlp.mean                       0.0      1      0   
+detection.detection_gmm.mean                       0.0      1      0   
+detection.detection_linear.mean                    0.0      1      0   
+privacy.delta-presence.score                       0.0      1      0   
+privacy.k-anonymization.gt                         0.0      1      0   
+privacy.k-anonymization.syn                        0.0      1      0   
+privacy.k-map.score                                0.0      1      0   
+privacy.distinct l-diversity.gt                    0.0      1      0   
+privacy.distinct l-diversity.syn                   0.0      1      0   
+privacy.identifiability_score.score                0.0      1      0   
+privacy.identifiability_score.score_OC             0.0      1      0   
+privacy.DomiasMIA_BNAF.accuracy                    0.0      1      0   
+privacy.DomiasMIA_BNAF.aucroc                      0.0      1      0   
+
+                                                   durations  
+sanity.data_mismatch.score                              0.00  
+sanity.common_rows_proportion.score                     0.00  
+sanity.nearest_syn_neighbor_distance.mean               0.00  
+sanity.close_values_probability.score                   0.00  
+sanity.distant_values_probability.score                 0.00  
+stats.jensenshannon_dist.marginal                       0.08  
+stats.chi_squared_test.marginal                         0.01  
+stats.inv_kl_divergence.marginal                        0.01  
+stats.ks_test.marginal                                  0.01  
+stats.max_mean_discrepancy.joint                        0.01  
+stats.wasserstein_dist.joint                            0.02  
+stats.prdc.precision                                    0.01  
+stats.prdc.recall                                       0.01  
+stats.prdc.density                                      0.01  
+stats.prdc.coverage                                     0.01  
+stats.alpha_precision.delta_precision_alpha_OC          3.15  
+stats.alpha_precision.delta_coverage_beta_OC            3.15  
+stats.alpha_precision.authenticity_OC                   3.15  
+stats.alpha_precision.delta_precision_alpha_naive       3.15  
+stats.alpha_precision.delta_coverage_beta_naive         3.15  
+stats.alpha_precision.authenticity_naive                3.15  
+performance.linear_model.gt                             0.34  
+performance.linear_model.syn_id                         0.34  
+performance.linear_model.syn_ood                        0.34  
+performance.mlp.gt                                      8.55  
+performance.mlp.syn_id                                  8.55  
+performance.mlp.syn_ood                                 8.55  
+performance.xgb.gt                                      0.57  
+performance.xgb.syn_id                                  0.57  
+performance.xgb.syn_ood                                 0.57  
+performance.linear_model_augmentation.gt                0.37  
+performance.linear_model_augmentation.aug_ood           0.37  
+performance.mlp_augmentation.gt                         8.73  
+performance.mlp_augmentation.aug_ood                    8.73  
+performance.xgb_augmentation.gt                         0.54  
+performance.xgb_augmentation.aug_ood                    0.54  
+performance.feat_rank_distance.corr                     0.17  
+performance.feat_rank_distance.pvalue                   0.17  
+detection.detection_xgb.mean                            0.13  
+detection.detection_mlp.mean                            3.38  
+detection.detection_gmm.mean                            0.23  
+detection.detection_linear.mean                        32.30  
+privacy.delta-presence.score                            0.06  
+privacy.k-anonymization.gt                              0.10  
+privacy.k-anonymization.syn                             0.10  
+privacy.k-map.score                                     0.06  
+privacy.distinct l-diversity.gt                         0.12  
+privacy.distinct l-diversity.syn                        0.12  
+privacy.identifiability_score.score                     0.03  
+privacy.identifiability_score.score_OC                  0.03  
+privacy.DomiasMIA_BNAF.accuracy                        54.75  
+privacy.DomiasMIA_BNAF.aucroc                          54.75  

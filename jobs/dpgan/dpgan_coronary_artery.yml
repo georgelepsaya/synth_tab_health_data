@@ -8,12 +8,14 @@ command: >
   ${{inputs.target_col}}
   ${{inputs.n_trials}}
   "${{inputs.sep}}"
+  ${{inputs.epsilon}}
 environment: azureml:synthtabhealthdata@latest
 inputs:
   model_name: dpgan
   target_col: Cath
   n_trials: 50
   sep: ","
+  epsilon: 15
   dataset_path:
     type: uri_file
     path: azureml:coronary_artery:1
